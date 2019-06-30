@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Word Wizard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="jquery.ui.touch-punch.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="slick.css">
+        <link rel="stylesheet" href="slick-theme.css">
+        <script src="slick.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="phonics.css">
+        <script src="phonics.js"></script>
+    </head>
+    <body>
+        <div id="word-builder" class="invisible-object">
+            <div class="word-builder-sentence"><i class="fa fa-volume-up" style="color: yellow; "></i>&nbsp;<span>The sentence is this!</span></div>
+            <br>
+            <span id="directions">Use the arrows to build the word from different parts.</span>
+            <div id="word-sliders"></div>
+            <button id="check-button" class="btn btn-light">Submit</button>
+        </div>
+        <div id="end-screen" class="invisible-object">
+            <b>Here are the words you created:</b>
+            <p></p>
+            <div id="end-words">
+            </div>
+            <p></p>
+            <button onclick="endGame();">End game</button>
+        </div>
+        <div id="options" class="invisible-object">
+            <p></p>
+            <center>
+                <label><input type="radio" name="level" value="0"/>Level 1</label>
+                <label><input type="radio" name="level" value="1"/>Level 2</label>
+                <label><input type="radio" name="level" value="2"/>Level 3</label>
+                <label><input type="radio" name="level" value="3"/>Level 4</label>
+            </center>
+            <button id="test-button">Go!</button>
+            <p></p>
+            <b>Note:</b> if you don't hear any sound, try using a different browser.
+            <br>
+            You'll need to have proper audio support in your browser to use this game.
+        </div>
+        <script src="https://code.responsivevoice.org/responsivevoice.js?key=KZ652opR"></script>
+    </body>
+</html>
