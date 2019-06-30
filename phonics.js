@@ -283,12 +283,11 @@ $(window).load(function() {
         /* Check for correctness here */
         
     });
-    $("#test-button").click(function() {
-        currentWordList = parseInt($("input[name=level]:checked").val());
+    $(".option-button").click(function() {
+        currentWordList = parseInt($(this).attr("data-val"));
         if(currentWordList === undefined || currentWordList === null || isNaN(currentWordList))
             return;
         
-        $("input[name=level]:checked").removeProp("checked");
         $("#options").addClass("invisible-object");
         currentQuestion = 0;
         generateSliders(wordLists[currentWordList]);

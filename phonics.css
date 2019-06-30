@@ -18,6 +18,10 @@ body {
 
 
 
+.option-button {
+    display: block;
+    margin: 10px;
+}
 body > div {
     width: 100%;
     height: 100%;
