@@ -121,7 +121,6 @@ function generateWordLists(wordList) {
             /* About to swap modes - store the current chunk into an array */
             if(numChars === 0)
                 throw "Should never have 0 chars";
-            console.log(tmpWordList[j][1]);
             var theSubStr = tmpWordList[j][1].substr(startOfChunk, numChars);
             tmpArray.push(theSubStr);
             startOfChunk = i;
@@ -179,11 +178,9 @@ function generateSliders(tmpWordList) {
             } else
                 str = tmpWordList[j][1][i];
             if(existingStrs[i].indexOf(str) === -1) {
-                console.log("Random int between 0 and " + (numSlides[i] - 1));
                 $slider.slick('slickAdd', '<div>' + str + '</div>', getRandomInt(0, numSlides[i] - 1), true);
                 existingStrs[i].push(str);
                 numSlides[i]++;
-                console.log("numSlides[i (" + i + ")] is now "+ numSlides[i]);
             }
             
         }
@@ -240,10 +237,8 @@ $(window).load(function() {
     });
     $("#check-button").click(function() {
         
-        console.log("Slider val: " + sliderVal());
         if(sliderVal() === currentWordStr) {
             
-            console.log("isCorrect");
             var $clone = $(this).clone();
             $("#check-button").prop("disabled", "disabled");
             $clone.insertAfter($(this));
@@ -260,7 +255,6 @@ $(window).load(function() {
                     
                     $clone.remove();
                     currentQuestion++;
-                    console.log("This is now question " + currentQuestion);
                     if(currentQuestion < 6) {
                         generateQuestion(wordLists[currentWordList]);
                     } else {
@@ -277,7 +271,6 @@ $(window).load(function() {
             
         } else {
             $("#check-button").effect("shake");
-            console.log("Incorrect");
             return;
         }
         /* Check for correctness here */
